@@ -18,7 +18,7 @@ weatherForm.addEventListener("submit", (event) => {
 	messageTwo.style.color = "#888888";
 	messageTwo.textContent = "";
 
-	fetch("http://localhost:8080/weather?address=" + location)
+	fetch("/weather?address=" + location)
 		.then((response) => {
 			response.json().then((data) => {
 				if (data.error) {

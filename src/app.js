@@ -5,6 +5,8 @@ const forecast = require("./utils/forecast");
 const geoCode = require("./utils/geocode");
 
 const app = express();
+const port = process.env.PORT || 8080;
+
 const publicDirectoryPath = path.join(__dirname, "../public");
 const viewsPath = path.join(__dirname, "../templates/views");
 const partialsPath = path.join(__dirname, "../templates/partials");
@@ -85,6 +87,6 @@ app.get("*", (req, res) => {
 	});
 });
 
-app.listen(8080, () => {
-	console.log("Server is up and running on 8080.");
+app.listen(port, () => {
+	console.log("Server is up and running on " + port + ".");
 });
